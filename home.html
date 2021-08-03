@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-11/css/all.css" integrity="sha512-xO/VZFNBvip9IT+BD6Nq/pHdBvKeFcwygKqARlegjQ+5A68KsMSYrPbGP1oYow5ec9Tqq8peJXcn5J1bD4O00w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="weather/style.css">
+    <title>Weather App</title>
+</head>
+<body>
+    
+        
+    <div class="box">
+        <div class="wave one"></div>
+        <div class="wave two"></div>
+        <div class="wave three"></div>
+        <div id="weathercon">
+            <i class="fas fa-sun" style="color: #FFD49D"></i>
+            
+        </div>
+        <div class="info">
+            <h2 class="location"><i class="fas fa-street-view"></i> {%location%}, {%country%}</h2>
+            <p id="date" style="color: rgb(153, 20, 20)"> WED | AUG 02 | 10:49AM</p>
+            <h1 class="temp">{%temp%}</h1>
+            <h3 class="tempminmax">Min {%tempmin%} | Max {%tempmax%} </h3>
+        </div>
+    
+    </div>
+    
+    
+</body>
+<script>
+    const curDate=document.getElementById("date");
+
+    let weathercon=document.getElementById("weathercon");
+
+    const tempStat = "clouds";
+    var d = new Date();
+    const getCurrDay =() =>{
+
+        
+        var weekday = new Array(7);
+        weekday[0] = "Sun";
+        weekday[1] = "Mon";
+        weekday[2] = "Tue";
+        weekday[3] = "Wed";
+        weekday[4] = "Thu";
+        weekday[5] = "Fri";
+        weekday[6] = "Sat";
+
+        var n = weekday[d.getDay()];
+
+        return n;
+
+    };
+
+    const getcurrTime= ()=>{
+        var months=[
+            "Jan","Feb","Mar","Apr","May","June","July","Aug","Sept","Oct","Nov","Dec"
+        ];
+        var getmonth=d.getMonth();
+        var getdate=d.getDate();
+
+        let hrs=d.getHours();
+        let min=d.getMinutes();
+        let period="AM";
+        if(hrs>11){
+            period="PM";
+        }
+        if(min<10){
+            min="0"+min;
+        }
+        if(getdate<10){
+            getdate="0"+getdate
+        }
+        return ` ${months[getmonth]} ${getdate} | ${hrs}:${min} ${period}`
+    };
+    curDate.innerHTML=getCurrDay() +"|" +getcurrTime();
+    
+    
+</script>
+</html>
