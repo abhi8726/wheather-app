@@ -5,7 +5,73 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0-11/css/all.css" integrity="sha512-xO/VZFNBvip9IT+BD6Nq/pHdBvKeFcwygKqARlegjQ+5A68KsMSYrPbGP1oYow5ec9Tqq8peJXcn5J1bD4O00w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="weather/style.css">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body{
+    background-color:rgb(216, 210, 202);
+    
+}
+
+.box{
+    
+    background-color: rgb(159, 180, 236);
+    height: 400px;
+    width: 300px;
+    border: solid cornflowerblue;
+    border-radius: 5px;
+    position: absolute;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%,10%);
+    text-align: center;
+
+    
+}
+
+.info{
+    margin-top: 200px;
+    
+}
+
+#weathercon{
+    position: absolute;
+    left: 40%;
+    top: 10%;
+    
+    
+    
+    
+}
+
+.location,.date,.temp,.tempminmax{
+    
+    text-align: center;
+}
+#weathercon .fas{
+    font-size: 50px;
+    animation: fas-anime 3s linear  infinite alternate;
+}
+
+@keyframes fas-anime{
+    from{
+        transform: scale(0.7);
+    }
+    to {
+        transform: scale(1.3);
+    }
+}
+ .fa-street-view{
+    animation: rotates 2s linear  infinite alternate;
+}
+@keyframes rotates{
+    from {
+        transform: translateX(-0.5em);
+    }
+    to {
+        transform: translateX(0.3em);
+    }
+}
+    </style>
     <title>Weather App</title>
 </head>
 <body>
